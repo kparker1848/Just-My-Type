@@ -68,7 +68,7 @@ $(document).ready(function () {
         $(`#${e.keyCode}`).css({ "background-color": "#fff2ac", })
         //start timer 
         $(document).one("keypress", function () {
-            timerInt();
+            timerInt;
         });
         //correct key sequence
         if (e.keyCode != 16 && e.which == sentenceArray[sentenceCount].charCodeAt(letterCount)) {
@@ -102,6 +102,9 @@ $(document).ready(function () {
                     //timer math + wpm calculation
                     let seconds = secondCount;
                     let minutes = Math.floor(seconds / 60);
+                    if (minutes == 0) {
+                        minutes = 1;
+                    }
                     responseBox.text("Your WPM is " + (numberOfWords / minutes - 2 * mistakeCount));
                     //showing play again options
                     responseBox.append("<br>", replayPar);
