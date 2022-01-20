@@ -40,3 +40,17 @@
 .glyphicon-remove {
   color : #CD2626
 }
+
+.page-bg {
+  background-image: url("images/typewriter.jpg") ;
+  background-position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.btn-styling {
+  margin: 1rem;
+  padding: 1rem;
+}

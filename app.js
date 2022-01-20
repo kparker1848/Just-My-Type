@@ -24,7 +24,9 @@ $(document).ready(function () {
     let replayPar = $("<par></par>");
     replayPar.text("Play Again?");
     let yesBtn = $("<button>Yes</button>");
+    yesBtn.addClass("btn-styling");
     let noBtn = $("<button>No</button>");
+    noBtn.addClass("btn-styling");
     replayPar.append("<br>", yesBtn);
     replayPar.append(noBtn);
 
@@ -73,7 +75,11 @@ $(document).ready(function () {
             //increasing the letter count per correct letter
             letterCount++;
             //putting next key target in its display
-            targetLetter.text(sentenceArray[sentenceCount].charAt(letterCount));
+            if (sentenceArray[sentenceCount].charAt(letterCount) == " ") {
+                targetLetter.text("space")
+            } else {
+                targetLetter.text(sentenceArray[sentenceCount].charAt(letterCount));
+            };
             //animating the sentence highlight
             $("#yellow-block").animate({ marginLeft: '+=17.5px' }, 0, resetBlock());
             //tracking correct key press in feedback box
