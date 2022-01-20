@@ -68,7 +68,7 @@ $(document).ready(function () {
         $(`#${e.keyCode}`).css({ "background-color": "#fff2ac", })
         //start timer 
         $(document).one("keypress", function () {
-            timerInt;
+            timerInt();
         });
         //correct key sequence
         if (e.keyCode != 16 && e.which == sentenceArray[sentenceCount].charCodeAt(letterCount)) {
